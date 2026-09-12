@@ -10,17 +10,18 @@
     outline: none;
 }
 
-/* Base Colors mimicking the video */
+/* Base Colors */
 :root {
     --bg-color: #1f242d;
     --second-bg-color: #323946;
     --text-color: #fff;
-    --main-color: #0ef; /* Cyan accent color */
+    --main-color: #0ef; 
 }
 
 html {
-    font-size: 62.5%; /* 1rem = 10px for easier scaling */
+    font-size: 62.5%; 
     overflow-x: hidden;
+    scroll-behavior: smooth; /* Enables smooth scrolling for navbar links */
 }
 
 body {
@@ -60,12 +61,39 @@ body {
     color: var(--main-color);
 }
 
-.home {
+/* Base Section Formatting */
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 0 9%;
+    flex-direction: column;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+}
+
+section h2 span {
+    color: var(--main-color);
+}
+
+/* Alternating Background Colors */
+.about, .portfolio {
+    background: var(--second-bg-color);
+}
+
+.services, .contact {
+    background: var(--bg-color);
+}
+
+/* Home Section Layout */
+.home {
+    flex-direction: row;
+    text-align: left;
 }
 
 .home-content {
@@ -143,7 +171,7 @@ body {
     align-items: center;
 }
 
-/* Glowing image effect with proper portrait cropping */
+/* Portrait Image Cropping */
 .home-img img {
     width: 30vw;
     height: 30vw; 
@@ -153,3 +181,4 @@ body {
     border: 0.2rem solid var(--main-color);
     box-shadow: 0 0 2rem var(--main-color);
 }
+
